@@ -1,5 +1,5 @@
 // src/App.tsx
-import { Outlet, Navigate, useParams, useLocation, useNavigate } from 'react-router-dom'
+import { Outlet, Navigate, useParams} from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 
@@ -9,9 +9,6 @@ type Locale = (typeof SUPPORTED_LOCALES)[number]
 export default function App() {
   const { i18n } = useTranslation()
   const params = useParams()
-  const location = useLocation()
-  const navigate = useNavigate()
-
   const locale = (params.locale as Locale) || 'en'
   const isValidLocale = SUPPORTED_LOCALES.includes(locale)
 
@@ -19,7 +16,6 @@ export default function App() {
     return <Navigate to="/en" replace />
   }
 
-  // تغيير اللغة + الاتجاه
   useEffect(() => {
     if (i18n.language !== locale) {
       i18n.changeLanguage(locale)
