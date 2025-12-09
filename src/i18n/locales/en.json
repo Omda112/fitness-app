@@ -1,0 +1,13 @@
+{
+  "common": {
+    "appName": "Fitness App",
+    "welcome": "Welcome to Fitness App",
+    "login": "Login",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "home": {
+    "headline": "Track your workouts. Smash your goals.",
+    "cta": "Start now"
+  }
+}
