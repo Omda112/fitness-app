@@ -4,6 +4,7 @@ import Home from '@/app/home/Home'
 import Login from '@/app/auth/login/Login'
 import ForgotPassword from '@/app/auth/forgot-password/forgot-password-flow'
 import AuthLayout from '@/app/auth/layout'
+import Register from '@/app/auth/register/register'
 
 const supportedLocales = ['en', 'ar'] as const
 
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
     path: '/forgot-password',
     element: <Navigate to="/en/forgot-password" replace />,
   },
+  {
+    path: '/register',
+    element: <Navigate to="/en/register" replace />,
+  },
 
   {
     path: '/:locale',
@@ -35,6 +40,7 @@ export const router = createBrowserRouter([
         children: [
           { path: 'login', element: <Login /> },
           { path: 'forgot-password', element: <ForgotPassword /> },
+          { path: 'register', element: <Register /> },
         ],
       },
     ],

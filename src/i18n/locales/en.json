@@ -4,10 +4,97 @@
     "welcome": "Welcome to Fitness App",
     "login": "Login",
     "logout": "Logout",
-    "language": "Language"
+    "language": "Language",
+    "next": "Next",
+    "error": {
+      "height": "Please select your height",
+      "weight": "Please select your weight",
+      "required": "Please complete all steps before submitting",
+      "age": "Please select your age",
+      "gender": "Please select your gender",
+      "goal": "Please select your goal.",
+      "activity": "Please select your activity level.",
+      "firstName": {
+        "minLength": "First name must be at least 2 characters"
+      },
+      "lastName": {
+        "minLength": "Last name must be at least 2 characters"
+      },
+      "password": {
+        "minLength": "Password must be at least 8 characters",
+        "uppercase": "Password must contain an uppercase letter",
+        "lowercase": "Password must contain a lowercase letter",
+        "number": "Password must contain a number",
+        "specialCharacter": "Password must contain a special character",
+        "match": "Passwords do not match"
+      },
+      "email": {
+        "invalid": "Invalid email"
+      },
+      "api": {
+        "userAlreadyExists": "User already exists",
+        "invalidResponse": "Invalid response from server. Please try again.",
+        "failedToVerifyEmail": "Failed to verify email. Please try again."
+      }
+    },
+    "success": {
+      "accountCreated": "Account created successfully"
+    }
   },
   "home": {
     "headline": "Track your workouts. Smash your goals.",
     "cta": "Start now"
+  },
+  "auth": {
+    "register": {
+      "activity": {
+        "title": "What Is Your Activity Level?",
+        "description": "This helps us customize your workout intensity."
+      },
+      "age": {
+        "title": "  How Old Are you ?",
+        "description": "this helps us create Your personalized plan",
+        "unit": {
+          "title": "Age"
+        }
+      },
+      "height": {
+        "title": "What is Your Height ?",
+        "description": "Almost there!",
+        "unit": {
+          "title": "Height"
+        }
+      },
+      "weight": {
+        "title": "What's Your Weight?",
+        "description": "This helps us calculate your fitness metrics.",
+        "unit": "Weight"
+      },
+      "title": "Hey There",
+      "subtitle": "Create An Account",
+      "register": "Register",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "rePassword": "Confirm Password",
+      "forgetPassword": " Forget Password ?",
+      "alreadyHaveAccount": "Already Have an account?",
+      "checking": "Check",
+      "login": "Login",
+      "gender": {
+        "title": "        TELL US ABOUT YOURSELF!",
+        "description": "We Need To Know Your Gender",
+        "male": "Male",
+        "female": "Female"
+      },
+      "goal": {
+        "title": "What Is Your Goal?",
+        "description": "This helps us create your personalized plan",
+        "gainWeight": "Gain weight",
+        "loseWeight": "Lose weight",
+        "maintainWeight": "Maintain weight"
+      }
+    }
   }
 }
