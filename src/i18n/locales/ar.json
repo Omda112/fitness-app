@@ -148,7 +148,8 @@
         "gainWeight": "زيادة الوزن",
         "loseWeight": "فقدان الوزن",
         "maintainWeight": "الحفاظ على الوزن"
-      }
+      },
+      "next": "يسجل"
     }
   }
 }

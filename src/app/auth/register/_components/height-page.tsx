@@ -1,38 +1,38 @@
-import NumberCarousel from '@/components/embla'
-import { Button } from '@/components/ui/button'
-import { RegisterSchema } from '@/lib/schema/register.schema'
-import { UseFormReturn } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
+import NumberCarousel from '@/components/embla';
+import { Button } from '@/components/ui/button';
+import { RegisterSchema } from '@/lib/schema/register.schema';
+import { UseFormReturn } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
 
 interface HeightProps {
-  form: UseFormReturn<RegisterSchema>
+  form: UseFormReturn<RegisterSchema>;
   setStep: (
     step: 'gender' | 'age' | 'weight' | 'height' | 'goal' | 'register' | 'activity'
-  ) => void
+  ) => void;
 }
 
 export default function HeightPage({ form, setStep }: HeightProps) {
   // Translation
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const handleHeightChange = (value: number) => {
     // Check if the value is a number
-    const heightNumber = typeof value === 'string' ? parseFloat(value) : value
-    form.setValue('height', heightNumber)
-  }
+    const heightNumber = typeof value === 'string' ? parseFloat(value) : value;
+    form.setValue('height', heightNumber);
+  };
 
   // Function
   const handleNext = () => {
-    const height = form.getValues('height')
-    
+    const height = form.getValues('height');
+
     // Check if height is selected
     if (!height) {
-      toast.error(t('common.error.height'))
-      return
+      toast.error(t('common.error.height'));
+      return;
     }
     // Next Step
-    setStep('goal')
-  }
+    setStep('goal');
+  };
 
   return (
     <div className="min-h-screen flex items-center flex-col justify-center p-1">
@@ -55,6 +55,7 @@ export default function HeightPage({ form, setStep }: HeightProps) {
       />
 
       <Button
+        disabled={!form.watch('height')}
         size="lg"
         className="px-12 bg-[#FF4100] w-1/2 mt-5 cursor-pointer hover:bg-[#E03A00]"
         onClick={handleNext}
@@ -62,5 +63,5 @@ export default function HeightPage({ form, setStep }: HeightProps) {
         {t('common.next')}
       </Button>
     </div>
-  )
+  );
 }

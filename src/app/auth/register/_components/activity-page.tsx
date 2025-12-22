@@ -22,7 +22,6 @@ interface ActivityLevelScreenProps {
 
 export default function ActivityLevelScreen({
   form,
-  setStep,
   RegisterApi,
   isPending,
 }: ActivityLevelScreenProps) {

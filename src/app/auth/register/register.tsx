@@ -1,30 +1,30 @@
-import { useState, useMemo } from 'react'
-import GenderPage from './_components/gender-page'
-import AgePage from './_components/age-page'
-import WeightPage from './_components/weight-page'
-import HeightPage from './_components/height-page'
-import GoalSelectionScreen from './_components/goal-page'
-import ActivityPage from './_components/activity-page'
-import RegisterPage from './_components/register-page'
-import { useForm } from 'react-hook-form'
-import { getRegisterSchema, RegisterSchema } from '@/lib/schema/register.schema'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useRegister } from './_hooks/use-register'
-import { toast } from 'sonner'
-import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import { useState, useMemo } from 'react';
+import GenderPage from './_components/gender-page';
+import AgePage from './_components/age-page';
+import WeightPage from './_components/weight-page';
+import HeightPage from './_components/height-page';
+import GoalSelectionScreen from './_components/goal-page';
+import ActivityPage from './_components/activity-page';
+import RegisterPage from './_components/register-page';
+import { useForm } from 'react-hook-form';
+import { getRegisterSchema, RegisterSchema } from '@/lib/schema/register.schema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRegister } from './_hooks/use-register';
+import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Register() {
   // Translation
-  const { t } = useTranslation()
-  
+  const { t } = useTranslation();
+
   // Step
   const [step, setStep] = useState<
     'register' | 'gender' | 'age' | 'weight' | 'height' | 'goal' | 'activity'
-  >('register')
+  >('register');
 
   // Create schema with translations
-  const registerSchema = useMemo(() => getRegisterSchema(t), [t])
+  const registerSchema = useMemo(() => getRegisterSchema(t), [t]);
 
   // Form
   const form = useForm<RegisterSchema>({
@@ -43,11 +43,10 @@ export default function Register() {
       goal: undefined,
       activityLevel: undefined,
     },
-  })
-  // Navigate
-  const navigate = useNavigate()
+  });
+
   // Mutation
-  const { mutate, isPending } = useRegister()
+  const { mutate, isPending } = useRegister();
 
   // Function to check and submit the data
   const handleComplete = (data: RegisterSchema) => {
@@ -60,17 +59,19 @@ export default function Register() {
       !data.goal ||
       !data.activityLevel
     ) {
-      toast.error(t('common.error.required'))
-      return
+      toast.error(t('common.error.required'));
+      return;
     }
     // Call API
-    mutate(data)
-  }
+    mutate(data);
+  };
 
   return (
     <>
       {/* Register */}
-      {step === 'register' && <RegisterPage form={form} setStep={setStep} />}
+      {step === 'register' && (
+        <RegisterPage isPending={isPending} form={form} setStep={setStep} />
+      )}
 
       {/* Gender */}
       {step === 'gender' && <GenderPage form={form} setStep={setStep} />}
@@ -97,5 +98,5 @@ export default function Register() {
         />
       )}
     </>
-  )
+  );
 }

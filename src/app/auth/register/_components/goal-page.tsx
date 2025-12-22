@@ -9,9 +9,12 @@ import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import { useTranslation } from 'react-i18next'
 
+// Type alias for form
+type FormType = UseFormReturn<RegisterSchema>
+
 // Props
 interface GoalSelectionScreenProps {
-  form: UseFormReturn<RegisterSchema>
+  form: FormType
   setStep: (
     step: 'gender' | 'age' | 'weight' | 'height' | 'goal' | 'register' | 'activity'
   ) => void

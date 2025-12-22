@@ -148,7 +148,8 @@
         "gainWeight": "Gain weight",
         "loseWeight": "Lose weight",
         "maintainWeight": "Maintain weight"
-      }
+      },
+      "next": "Register"
     }
   }
 }
