@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
 export default function AuthLayout() {
   return (
@@ -20,9 +20,9 @@ export default function AuthLayout() {
       </div>
 
       {/* Right Side - Children */}
-      <div className="relative w-1/2">
+      <div className="relative w-1/2 ">
         <Outlet />
       </div>
     </main>
-  )
+  );
 }

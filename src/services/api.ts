@@ -1,10 +1,11 @@
-import axios from 'axios'
+import { JSON_HEADER } from '@/lib/constants/shared.constant';
+import axios from 'axios';
 
-export const api = axios.create({
-//   baseURL: import.meta.env.VITE_API_URL,
-})
+const api = axios.create({
+  baseURL: 'https://fitness.elevateegy.com/api/v1',
+  headers: {
+    ...JSON_HEADER,
+  },
+});
 
-api.interceptors.request.use((config) => {
-  // Add token if needed
-  return config
-})
+export default api;

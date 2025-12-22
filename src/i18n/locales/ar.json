@@ -9,5 +9,59 @@
   "home": {
     "headline": "تابعي تمارينك وكسّري أهدافك.",
     "cta": "ابدئي الآن"
+  },
+  "forgot-password": {
+    "email": {
+      "header": "نسيت كلمة المرور",
+      "title": "أدخل بريدك الإلكتروني",
+      "emailPlaceholder": "البريد الإلكتروني",
+      "sendButton": "إرسال رمز التحقق",
+      "sending": "جارٍ الإرسال...",
+      "noAccount": "ليس لديك حساب؟",
+      "createAccount": "إنشاء حساب",
+      "validation": {
+        "emailRequired": "البريد الإلكتروني مطلوب",
+        "emailInvalid": "عنوان بريد إلكتروني غير صحيح"
+      }
+    },
+    "otp": {
+      "header": "رمز التحقق",
+      "backButton": "رجوع",
+      "title": "أدخل رمز التحقق الذي استلمته",
+      "confirmButton": "تأكيد",
+      "confirming": "جارٍ التأكيد",
+      "didntReceive": "لم تستلم رمز التحقق؟",
+      "resendCode": "إعادة إرسال الرمز",
+      "requestAnotherCode": "يمكنك طلب رمز آخر خلال:",
+      "validation": {
+        "otpLength": "يجب أن يكون رمز التحقق 6 أرقام",
+        "otpNumbers": "يجب أن يحتوي رمز التحقق على أرقام فقط"
+      },
+      "toast": {
+        "success-message": "تم التحقق بنجاح. \nيمكنك الآن إعادة تعيين كلمة المرور الخاصة بك."
+      }
+    },
+    "new-password": {
+      "header": "إنشاء كلمة مرور جديدة",
+      "title": "تأكد من إنشاء كلمة مرور قوية!",
+      "newPasswordPlaceholder": "كلمة المرور الجديدة",
+      "confirmPasswordPlaceholder": "تأكيد كلمة المرور الجديدة",
+      "confirmButton": "تأكيد",
+      "confirming": "جارٍ التأكيد...",
+      "validation": {
+        "passwordRequired": "كلمة المرور مطلوبة",
+        "digit": "يجب أن تحتوي كلمة المرور على رقم واحد من 1 إلى 9",
+        "lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد",
+        "uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد",
+        "specialCharacter": "يجب أن تحتوي كلمة المرور على حرف خاص واحد",
+        "spaces": "يجب ألا تحتوي كلمة المرور على أي مسافات",
+        "range": "يجب أن تكون كلمة المرور من 8 إلى 25 حرفاً",
+        "confirmRequired": "يرجى تأكيد كلمة المرور",
+        "passwordsMatch": "كلمات المرور غير متطابقة"
+      },
+      "toast": {
+        "success-message": "لقد تم تحديث كلمة المرور الخاصة بك بنجاح."
+      }
+    }
   }
 }

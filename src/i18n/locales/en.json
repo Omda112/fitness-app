@@ -9,5 +9,59 @@
   "home": {
     "headline": "Track your workouts. Smash your goals.",
     "cta": "Start now"
+  },
+  "forgot-password": {
+    "email": {
+      "header": "Forgot Password",
+      "title": "Enter Your Email",
+      "emailPlaceholder": "Email",
+      "sendButton": "Sent OTP",
+      "sending": "Sending...",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create yours",
+      "validation": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address"
+      }
+    },
+    "otp": {
+      "header": "OTP CODE",
+      "backButton": "Back",
+      "title": "Enter the OTP you have received",
+      "confirmButton": "Confirm",
+      "confirming": "Confirming",
+      "didntReceive": "didn't receive verification code?",
+      "resendCode": "Resend Code",
+      "requestAnotherCode": "You can request another code in:",
+      "validation": {
+        "otpLength": "OTP must be 6 digits",
+        "otpNumbers": "OTP must contain only numbers"
+      },
+      "toast": {
+        "success-message": "Verification successful. You can now reset your password."
+      }
+    },
+    "new-password": {
+      "header": "Create New Password",
+      "title": "Make sure to create a strong password!",
+      "newPasswordPlaceholder": "New Password",
+      "confirmPasswordPlaceholder": "Confirm New Password",
+      "confirmButton": "Confirm",
+      "confirming": "Confirming...",
+      "validation": {
+        "passwordRequired": "Password is required",
+        "digit": "Password must contain one digit from 1 to 9",
+        "lowercase": "Password must contain one lowercase letter",
+        "uppercase": "Password must contain one uppercase letter",
+        "specialCharacter": "Password must contain one special character",
+        "spaces": "Password must not contain any spaces",
+        "range": "Password must be 8-25 characters long",
+        "confirmRequired": "Please confirm your password",
+        "passwordsMatch": "Passwords don't match"
+      },
+      "toast": {
+        "success-message": "Your password has been updated successfully."
+      }
+    }
   }
 }

@@ -1,47 +1,61 @@
-import { Outlet, Navigate, useParams } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { Outlet, Navigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Toaster } from './components/ui/sonner';
+import { ThemeProvider } from 'next-themes';
 
-const SUPPORTED_LOCALES = ['en', 'ar'] as const
-type Locale = (typeof SUPPORTED_LOCALES)[number]
+// Variables
+const SUPPORTED_LOCALES = ['en', 'ar'] as const;
+const queryClient = new QueryClient();
+
+// Types
+type Locale = (typeof SUPPORTED_LOCALES)[number];
 
 export default function App() {
   // Translation
-  const { i18n } = useTranslation()
+  const { i18n } = useTranslation();
 
   // Hooks
-  const params = useParams()
+  const params = useParams();
 
   // Variables
-  const queryClient = new QueryClient()
-  const locale = (params.locale as Locale) || 'en'
-  const isValidLocale = SUPPORTED_LOCALES.includes(locale)
+  const locale = (params.locale as Locale) || 'en';
+  const isValidLocale = SUPPORTED_LOCALES.includes(locale);
 
   if (!isValidLocale) {
-    return <Navigate to="/en" replace />
+    return <Navigate to="/en" replace />;
   }
 
   // Effects
   useEffect(() => {
     if (i18n.language !== locale) {
-      i18n.changeLanguage(locale)
+      i18n.changeLanguage(locale);
     }
 
-    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr'
-    document.documentElement.lang = locale
-  }, [locale, i18n])
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+  }, [locale, i18n]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* React Query Developer Tools */}
-      <ReactQueryDevtools initialIsOpen={false} />
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem={false}
+      storageKey="app-theme"
+    >
+      <QueryClientProvider client={queryClient}>
+        <Toaster />
 
-      {/* Application Content */}
-      <div className="min-h-screen">
-        <Outlet />
-      </div>
-    </QueryClientProvider>
-  )
+        {/* React Query Developer Tools */}
+        <ReactQueryDevtools initialIsOpen={false} />
+
+        {/* Application Content */}
+        <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+          <Outlet />
+        </div>
+      </QueryClientProvider>
+    </ThemeProvider>
+  );
 }
