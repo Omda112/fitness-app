@@ -3,7 +3,6 @@ import { Eye, EyeOff, Mail, Lock, Loader2, Apple } from 'lucide-react';
 import { useLogin } from '@/hooks/useLogin';
 import { validateEmail, validatePassword } from '@/lib/schemes/auth.schema';
 
-
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -42,8 +41,7 @@ export default function LoginPage() {
         onError: (error: any) => {
           setErrors({
             general:
-              error?.response?.data?.message ||
-              'فشل تسجيل الدخول. تأكد من البيانات',
+              error?.response?.data?.message || 'فشل تسجيل الدخول. تأكد من البيانات',
           });
         },
       }
@@ -91,7 +89,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
-                    setErrors(prev => ({ ...prev, email: undefined }));
+                    setErrors((prev) => ({ ...prev, email: undefined }));
                   }}
                   onKeyPress={handleKeyPress}
                   className={`w-full bg-gray-800/50 border ${
@@ -101,7 +99,9 @@ export default function LoginPage() {
                 />
               </div>
               {errors.email && (
-                <p className="text-red-400 text-xs mt-2 mr-4 text-right">{errors.email}</p>
+                <p className="text-red-400 text-xs mt-2 mr-4 text-right">
+                  {errors.email}
+                </p>
               )}
             </div>
 
@@ -110,12 +110,12 @@ export default function LoginPage() {
               <div className="relative">
                 <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
-                    setErrors(prev => ({ ...prev, password: undefined }));
+                    setErrors((prev) => ({ ...prev, password: undefined }));
                   }}
                   onKeyPress={handleKeyPress}
                   className={`w-full bg-gray-800/50 border ${
@@ -129,17 +129,23 @@ export default function LoginPage() {
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
                   disabled={isPending}
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-400 text-xs mt-2 mr-4 text-right">{errors.password}</p>
+                <p className="text-red-400 text-xs mt-2 mr-4 text-right">
+                  {errors.password}
+                </p>
               )}
             </div>
 
             {/* Forget Password */}
             <div className="text-right">
-              <button 
+              <button
                 type="button"
                 onClick={() => alert('Forget password feature coming soon!')}
                 className="text-orange-500 text-sm hover:text-orange-400 transition-colors"
@@ -150,22 +156,22 @@ export default function LoginPage() {
             </div>
 
             {/* Login Button */}
-              {/* Login Button */}
-        <button
-          type="button"
-          onClick={handleLogin}
-          disabled={isPending}
-          className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-full transition-colors shadow-lg flex items-center justify-center gap-2"
-        >
-          {isPending ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              <span>جاري تسجيل الدخول...</span>
-            </>
-          ) : (
-            'Login'
-          )}
-        </button>
+            {/* Login Button */}
+            <button
+              type="button"
+              onClick={handleLogin}
+              disabled={isPending}
+              className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-full transition-colors shadow-lg flex items-center justify-center gap-2"
+            >
+              {isPending ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>جاري تسجيل الدخول...</span>
+                </>
+              ) : (
+                'Login'
+              )}
+            </button>
           </div>
 
           {/* Divider */}
@@ -192,18 +198,21 @@ export default function LoginPage() {
               <span className="text-white text-xl font-bold">G</span>
             </button>
             <button
+              aria-label="apple-button"
               onClick={() => handleSocialLogin('apple')}
               disabled={isPending}
               className="w-12 h-12 bg-gray-700/80 hover:bg-gray-600 disabled:bg-gray-800 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-colors"
             >
-              <span className="text-white text-2xl"><Apple className="text-white w-6 h-6" /></span>
+              <span className="text-white text-2xl">
+                <Apple className="text-white w-6 h-6" />
+              </span>
             </button>
           </div>
 
           {/* Register Link */}
           <p className="text-center text-gray-400 text-sm">
             Don't Have An Account Yet ?{' '}
-            <button 
+            <button
               type="button"
               onClick={() => alert('Register page coming soon!')}
               disabled={isPending}

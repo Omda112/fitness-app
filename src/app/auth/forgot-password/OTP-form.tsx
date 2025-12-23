@@ -138,7 +138,7 @@ export default function OTPForm({ email, setStep }: OTPFormProps) {
                 <Button
                   type="button"
                   onClick={resendCodeHandler}
-                  className="text-[#FF4100] dark:text-[#FF5C33] text-base font-bold underline cursor-pointer hover:text-[#FF5C33] dark:hover:text-[#FF4100] hover:opacity-90 transition-colors"
+                  className="text-[#FF4100] bg-transparent hover:bg-transparent dark:text-[#FF5C33] text-base font-bold underline cursor-pointer hover:text-[#FF5C33] dark:hover:text-[#FF4100] hover:opacity-90 transition-colors"
                 >
                   {t('forgot-password.otp.resendCode')}
                 </Button>
