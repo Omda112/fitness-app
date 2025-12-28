@@ -1,10 +1,14 @@
-import { Outlet, Navigate, useParams } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Toaster } from './components/ui/sonner';
 import { ThemeProvider } from 'next-themes';
+
+// src/App.tsx
+import { Outlet, Navigate, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import Footer from './components/layout/footer/Footer'
 
 // Variables
 const SUPPORTED_LOCALES = ['en', 'ar'] as const;
@@ -52,10 +56,13 @@ export default function App() {
         <ReactQueryDevtools initialIsOpen={false} />
 
         {/* Application Content */}
-        <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+        <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
           <Outlet />
+          <Footer/>
         </div>
       </QueryClientProvider>
     </ThemeProvider>
   );
+    
+  
 }

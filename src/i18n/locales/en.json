@@ -43,7 +43,26 @@
   },
   "home": {
     "headline": "Track your workouts. Smash your goals.",
-    "cta": "Start now"
+    "cta": "Start now",
+    "hero_section": {
+      "hero_heading": {
+        "title": "Your body can <highlight>stand almost</highlight> anything"
+      },
+      "description": {
+        "desc_line1": "It's your mind that needs convincing. Push past your limits, stay ",
+        "desc_line2": "committed, and watch as your body transform into powerhouse of ",
+        "desc_line3": "strength and resilience. Start your journey today & truly capable of!"
+      },
+      "gym_data": {
+        "Active_Members": "Active Members",
+        "Certified_Trainers": "Certified Trainers",
+        "Year_Of_Experience": "Year Of Experience"
+      },
+      "hero_buttons": {
+        "get_started": "Get Started",
+        "explore_more": "Explore More"
+      }
+    }
   },
   "forgot-password": {
     "email": {
@@ -151,5 +170,17 @@
       },
       "next": "Register"
     }
+  },
+  "footer": {
+    "slogan_1": "Push harder, go further. Your",
+    "slogan_2": "fitness journey starts today!",
+    "contact_us": "contact us",
+    "gym_timing": "our gym timing",
+    "gym_timing_1": "Mon - Fri : 08:00 AM - 10:00 PM",
+    "gym_timing_2": "Sat - Sun : 08:00 AM - 09:00 PM",
+    "location": "our location",
+    "gym_location_1": "2715 Ash Dr. San Jose, South",
+    "gym_location_2": "Dakota 83475",
+    "phone_number": "+91 123 456 789"
   }
 }
