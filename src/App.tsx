@@ -1,7 +1,8 @@
 // src/App.tsx
-import { Outlet, Navigate, useParams} from 'react-router-dom'
+import { Outlet, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
+import Footer from './components/layout/footer/Footer'
 
 const SUPPORTED_LOCALES = ['en', 'ar'] as const
 type Locale = (typeof SUPPORTED_LOCALES)[number]
@@ -26,8 +27,9 @@ export default function App() {
   }, [locale, i18n])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Outlet />
+      <Footer />
     </div>
   )
 }
