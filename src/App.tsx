@@ -45,8 +45,8 @@ export default function App() {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
-      enableSystem={false}
+      defaultTheme="system"
+      enableSystem={true}
       storageKey="app-theme"
     >
       <QueryClientProvider client={queryClient}>
