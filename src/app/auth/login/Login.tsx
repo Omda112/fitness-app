@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, Loader2, Apple } from 'lucide-react';
 import { useLogin } from '@/hooks/useLogin';
 import { validateEmail, validatePassword } from '@/lib/schemes/auth.schema';
+import { useAuth } from '@/context/auth-context';
+
 
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  const { login } = useAuth();
 
   const [errors, setErrors] = useState<{
     email?: string;
@@ -37,6 +41,7 @@ export default function LoginPage() {
         onSuccess: (response) => {
           console.log('Token:', response.token);
           console.log('User:', response.user);
+          login(response.token, response.user);
           window.location.href = '/';
         },
         onError: (error: any) => {
@@ -139,7 +144,7 @@ export default function LoginPage() {
 
             {/* Forget Password */}
             <div className="text-right">
-              <button 
+              <button
                 type="button"
                 onClick={() => alert('Forget password feature coming soon!')}
                 className="text-orange-500 text-sm hover:text-orange-400 transition-colors"

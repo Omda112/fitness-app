@@ -1,8 +1,7 @@
-import Card from '@/components/ui/card'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-4">
@@ -11,8 +10,6 @@ export default function Home() {
       <button className="px-4 py-2 rounded-md bg-black text-white">
         {t('home.cta')}
       </button>
-
-
     </div>
-  )
+  );
 }

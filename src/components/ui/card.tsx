@@ -1,89 +1,76 @@
-import React from "react";
-import { ChevronRight, MoveUpRight } from "lucide-react";
+import * as React from "react"
 
-interface WorkoutCardProps {
-  image: string;
-  title: string;
-  buttonText?: string;
-  onClick?: () => void;
-  width?: number;
-  height?: number;
-  titleColor?: string; 
-  footerBgClass?: string;
-}
+import { cn } from "@/lib/utils"
 
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-xl border bg-card text-card-foreground shadow",
+      className
+    )}
+    {...props}
+  />
+))
+Card.displayName = "Card"
 
-const Card: React.FC<WorkoutCardProps> = ({
-  image,
-  title,
-   titleColor,
-   footerBgClass,
-  buttonText = "Explore",
-  onClick,
-  width = 404,
-  height = 399,
-}) => {
-  return (
-    <div
-      onClick={onClick}
-      style={{ width, height }}
-      className="
-        relative overflow-hidden
-        rounded-[18px]
-        border border-black/10
-        shadow-[0_10px_30px_rgba(0,0,0,0.15)]
-        bg-white
-        cursor-pointer
-        active:scale-[0.98]
-        transition-transform
-      "
-    >
-      <img
-        src={image}
-        alt={title}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+))
+CardHeader.displayName = "CardHeader"
 
-      <div   className={`
-    absolute bottom-0 left-0 right-0
-    backdrop-blur-md p-5
-    ${footerBgClass ?? "bg-white/90"}
-  `}>
-      <h3
-  className={`text-lg font-bold uppercase ${
-    titleColor ?? "text-zinc-900"
-  }`}
->
-  {title}
-</h3>
+const CardTitle = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("font-semibold leading-none tracking-tight", className)}
+    {...props}
+  />
+))
+CardTitle.displayName = "CardTitle"
 
-  <button className="mt-2 flex items-center gap-2 text-orange-500 font-semibold">
-  {buttonText}
+const CardDescription = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardDescription.displayName = "CardDescription"
 
-  {/* Outer rotated circle */}
-  <span
-    className="
-      w-6 h-6
-      bg-orange-500
-      rounded-[63px]
-      flex items-center justify-center
-      p-2
-      
-    "
-  >
-    {/* Arrow counter-rotated */}
-  <MoveUpRight
-  size={14}
-  className="text-black"
-/>
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
 
-  </span>
-</button>
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+))
+CardFooter.displayName = "CardFooter"
 
-
-      </div>
-    </div>
-  );
-};
-
-export default Card;
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }

@@ -1,12 +1,14 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom'
-import App from '../App'
-import Home from '@/app/home/Home'
-import Login from '@/app/auth/login/Login'
-import ForgotPassword from '@/app/auth/forgot-password/forgot-password-flow'
-import AuthLayout from '@/app/auth/layout'
-import Register from '@/app/auth/register/register'
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import App from '../App';
+import Home from '@/app/home/Home';
+import Login from '@/app/auth/login/Login';
+import ForgotPassword from '@/app/auth/forgot-password/forgot-password-flow';
+import AuthLayout from '@/app/auth/layout';
+import Register from '@/app/auth/register/register';
+import AccountSettingsPage from '@/app/account/account';
 
-const supportedLocales = ['en', 'ar'] as const
+
+const supportedLocales = ['en', 'ar'] as const;
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +36,9 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
 
+      // Account Settings (مش جزء من AuthLayout)
+      { path: 'account', element: <AccountSettingsPage /> },
+
       // Auth Routes
       {
         element: <AuthLayout />,
@@ -50,4 +55,4 @@ export const router = createBrowserRouter([
     path: '*',
     element: <Navigate to="/en" replace />,
   },
-])
+]);
