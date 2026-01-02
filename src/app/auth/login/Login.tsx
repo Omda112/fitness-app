@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, Loader2, Apple } from 'lucide-react';
 import { useLogin } from '@/hooks/useLogin';
-import { validateEmail, validatePassword } from '@/lib/schemes/auth.schema';
+import { validateEmail, validatePassword } from '@/lib/schemas/auth.schema';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');

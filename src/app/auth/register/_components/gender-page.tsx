@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { RegisterSchema } from '@/lib/schema/register.schema';
+import { RegisterSchema } from '@/lib/schemas/register.schema';
 import { cn } from '@/lib/utils';
 import { Mars, Venus } from 'lucide-react';
 import { UseFormReturn } from 'react-hook-form';

@@ -1,6 +1,6 @@
 import NumberCarousel from '@/components/embla'
 import { Button } from '@/components/ui/button'
-import { RegisterSchema } from '@/lib/schema/register.schema'
+import { RegisterSchema } from '@/lib/schemas/register.schema'
 import { UseFormReturn } from 'react-hook-form'
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'

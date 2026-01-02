@@ -7,7 +7,7 @@ import GoalSelectionScreen from './_components/goal-page';
 import ActivityPage from './_components/activity-page';
 import RegisterPage from './_components/register-page';
 import { useForm } from 'react-hook-form';
-import { getRegisterSchema, RegisterSchema } from '@/lib/schema/register.schema';
+import { getRegisterSchema, RegisterSchema } from '@/lib/schemas/register.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRegister } from './_hooks/use-register';
 import { toast } from 'sonner';

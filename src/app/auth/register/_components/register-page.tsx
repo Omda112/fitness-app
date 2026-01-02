@@ -10,7 +10,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Loader2, Lock, Mail, User } from 'lucide-react';
 import { SubmitHandler, UseFormReturn } from 'react-hook-form';
-import { RegisterSchema } from '@/lib/schema/register.schema';
+import { RegisterSchema } from '@/lib/schemas/register.schema';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';

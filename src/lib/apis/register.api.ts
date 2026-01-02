@@ -1,5 +1,5 @@
 import api from '@/services/api';
-import { RegisterSchema } from '../schema/register.schema';
+import { RegisterSchema } from '../schemas/register.schema';
 import { RegisterSuccessResponse } from '../types/register';
 
 export const ApiRegister = async (registerPayload: RegisterSchema): Promise<RegisterSuccessResponse> => {
