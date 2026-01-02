@@ -61,6 +61,7 @@ export default function AgePage({ form, setStep }: YearsProps) {
 
       {/* Button */}
       <Button
+        disabled={!form.watch('age')}
         size="lg"
         className="px-12 bg-[#FF4100] w-1/2 mt-5 cursor-pointer hover:bg-[#E03A00]"
         onClick={handleNext}

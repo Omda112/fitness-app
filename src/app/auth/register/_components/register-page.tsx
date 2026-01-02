@@ -1,71 +1,57 @@
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Lock, Mail, User } from 'lucide-react'
-import { SubmitHandler, UseFormReturn } from 'react-hook-form'
-import { RegisterSchema } from '@/lib/schema/register.schema'
-import { Link } from 'react-router-dom'
-import { toast } from 'sonner'
-import { cn } from '@/lib/utils'
-import { useTranslation } from 'react-i18next'
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Loader2, Lock, Mail, User } from 'lucide-react';
+import { SubmitHandler, UseFormReturn } from 'react-hook-form';
+import { RegisterSchema } from '@/lib/schema/register.schema';
+import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
+import { useTranslation } from 'react-i18next';
 
 interface RegisterPageProps {
-  form: UseFormReturn<RegisterSchema>
+  form: UseFormReturn<RegisterSchema>;
   setStep: (
     step: 'gender' | 'age' | 'weight' | 'height' | 'goal' | 'register' | 'activity'
-  ) => void
-  checkEmailExists?: (email: string) => Promise<boolean>
+  ) => void;
+  checkEmailExists?: (email: string) => Promise<boolean>;
+  isPending: boolean;
 }
 
-export default function RegisterPage({ form, setStep, checkEmailExists }: RegisterPageProps) {
-
+export default function RegisterPage({
+  form,
+  setStep,
+  checkEmailExists,
+  isPending,
+}: RegisterPageProps) {
   // Translation
-  const { t } = useTranslation()
-  const [isChecking, setIsChecking] = useState(false)
+  const { t } = useTranslation();
+  const [isChecking, setIsChecking] = useState(false);
 
-  const onSubmit: SubmitHandler<RegisterSchema> = async (values) => {
-    // Check if email already exists
-    if (checkEmailExists) {
-      setIsChecking(true)
-      try {
-        const exists = await checkEmailExists(values.email)
-        // Check if email already exists
-        if (exists) {
-          setIsChecking(false)
-          return
-        }
-        
-      } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : 'An error occurred'
-        toast.error(errorMessage)
-        setIsChecking(false)
-        return
-      }
-      setIsChecking(false)
-    }
-
+  const onSubmit: SubmitHandler<RegisterSchema> = async () => {
     // Continue to next step
-    setStep('gender')
-  }
+    setStep('gender');
+  };
 
   return (
     <div className="min-h-screen flex items-center flex-col justify-center p-1">
       <span className="text-center text-white text-lg font-normal">
-       {t('auth.register.title')}
+        {t('auth.register.title')}
         <h1 className="text-center text-4xl font-extrabold text-white m-1">
           {t('auth.register.subtitle')}
         </h1>
       </span>
 
       <div className="w-120 flex justify-center items-center flex-col max-w-lg border border-[#D3D3D3] rounded-[50px] p-10 mt-2">
-        <p className="text-center text-white m-2 text-2xl font-extrabold">{t('auth.register.register')}</p>
+        <p className="text-center text-white m-2 text-2xl font-extrabold">
+          {t('auth.register.register')}
+        </p>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
             {/* First Name */}
@@ -185,32 +171,37 @@ export default function RegisterPage({ form, setStep, checkEmailExists }: Regist
               to="/forgot-password"
               className="font-bold text-[#FF4100] text-base underline capitalize flex justify-end"
             >
-            {t('auth.register.forgetPassword')} 
+              {t('auth.register.forgetPassword')}
             </Link>
 
             <Button
+              disabled={isPending}
               type="submit"
-              size="lg"
-              disabled={isChecking}
-              className={cn(
-                "w-full text-white text-lg py-6 rounded-full mt-1 transition",
-                !isChecking 
-                  ? "bg-[#FF4100] hover:bg-[#E03A00]" 
-                  : "bg-white/30 cursor-not-allowed"
-              )}
+              className="bg-[#FF4100] hover:bg-[#FF5C33] font-bold text-base w-full rounded-full mt-4 cursor-pointer text-white"
             >
-              {isChecking ? t('auth.register.checking') : t('common.next')}
+              {/* Is Pending State */}
+              {isPending ? (
+                <>
+                  {t('forgot-password.email.sending')}{' '}
+                  <Loader2 className="animate-spin" />
+                </>
+              ) : (
+                t('auth.register.next')
+              )}
             </Button>
           </form>
           <Link
             to="/login"
             className="text-base text-white capitalize flex justify-end mt-1"
           >
-            {t('auth.register.alreadyHaveAccount')}{'  '}
-            <span className="text-[#FF4100] underline ml-1">{t('auth.register.login')}</span>
+            {t('auth.register.alreadyHaveAccount')}
+            {'  '}
+            <span className="text-[#FF4100] underline ml-1">
+              {t('auth.register.login')}
+            </span>
           </Link>
         </Form>
       </div>
     </div>
-  )
+  );
 }
