@@ -1,4 +1,4 @@
-import { sendEmailAction } from '@/lib/actions/forgot-password/send-email.action';
+import { sendEmailAction } from '@/lib/apis/forgot-password/send-email.action';
 import { EmailValue } from '@/lib/schemas/forgot-password.schema';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';

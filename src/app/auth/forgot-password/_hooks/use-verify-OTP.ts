@@ -1,4 +1,4 @@
-import { verifyOTPAction } from '@/lib/actions/forgot-password/verify-OTP.action';
+import { verifyOTPAction } from '@/lib/apis/forgot-password/verify-OTP.action';
 import { OTPvalue } from '@/lib/schemas/forgot-password.schema';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';

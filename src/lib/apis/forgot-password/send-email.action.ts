@@ -6,6 +6,7 @@ export const sendEmailAction = async (email: EmailValue): Promise<SendEmailRespo
   try {
     // Send Post Request to "forgotPassword Endpoint"
     const response = await api.post<SendEmailResponse>('/auth/forgotPassword', email);
+
     // Return the server response
     return response.data;
   } catch (error: any) {

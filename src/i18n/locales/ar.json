@@ -150,5 +150,88 @@
         "maintainWeight": "الحفاظ على الوزن"
       }
     }
+  },
+  "aiChat": {
+    "sidebar": {
+      "title": "سجل المحادثات",
+      "newThread": "محادثة جديدة",
+      "storageNotice": "يتم تخزين محادثاتك محلياً"
+    },
+    "header": {
+      "activeModel": "النموذج النشط",
+      "switchModel": "تبديل النموذج",
+      "models": {
+        "gemini": "Gemini 2.0 Flash",
+        "llama": "Llama 3.3",
+        "deepseek": "DeepSeek V3.1",
+        "gemma": "Google: Gemma 3n 4B"
+      }
+    },
+    "thread": {
+      "newChat": "محادثة جديدة",
+      "welcome": {
+        "title": "مرحباً بك!",
+        "subtitle": "كيف يمكنني مساعدتك اليوم؟"
+      },
+      "suggestions": {
+        "workout": {
+          "title": "اقترح تمارين",
+          "label": "للمبتدئين في المنزل",
+          "prompt": "اقترح روتين تمارين شامل للجسم للمبتدئين في المنزل."
+        },
+        "nutrition": {
+          "title": "نصائح تغذية",
+          "label": "لزيادة العضلات",
+          "prompt": "ماذا يجب أن آكل لزيادة الكتلة العضلية بفعالية؟"
+        }
+      },
+      "composer": {
+        "placeholder": "راسل المساعد الذكي...",
+        "send": "إرسال رسالة",
+        "cancel": "إيقاف التوليد"
+      },
+      "actions": {
+        "copy": "نسخ",
+        "export": "تصدير كـ Markdown",
+        "refresh": "تحديث",
+        "edit": "تعديل",
+        "scrollToBottom": "النزول للأسفل",
+        "previous": "السابق",
+        "next": "التالي"
+      },
+      "edit": {
+        "cancel": "إلغاء",
+        "update": "تحديث"
+      },
+      "attachments": {
+        "imagePreview": "معاينة الصورة",
+        "imageAttachmentPreview": "معاينة مرفق الصورة",
+        "attachmentPreview": "معاينة المرفق",
+        "removeFile": "إزالة الملف",
+        "addAttachment": "إضافة مرفق",
+        "types": {
+          "image": "صورة",
+          "document": "مستند",
+          "file": "ملف"
+        },
+        "attachmentLabel": "مرفق {{typeLabel}}"
+      },
+      "tools": {
+        "cancelled": "أداة ملغاة: ",
+        "used": "أداة مستخدمة: ",
+        "cancelledReason": "سبب الإلغاء:",
+        "result": "النتيجة:"
+      },
+      "threadList": {
+        "newThread": "محادثة جديدة",
+        "loading": "جاري تحميل المحادثات",
+        "fallbackTitle": "محادثة جديدة",
+        "archive": "أرشفة المحادثة"
+      },
+      "markdown": {
+        "copy": "نسخ"
+      }
+    }
   }
+
 }

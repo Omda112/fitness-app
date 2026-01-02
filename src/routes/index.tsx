@@ -1,12 +1,13 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom'
-import App from '../App'
-import Home from '@/app/home/Home'
-import Login from '@/app/auth/login/Login'
-import ForgotPassword from '@/app/auth/forgot-password/forgot-password-flow'
-import AuthLayout from '@/app/auth/layout'
-import Register from '@/app/auth/register/register'
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import App from '../App';
+import Home from '@/app/home/Home';
+import Login from '@/app/auth/login/Login';
+import ForgotPassword from '@/app/auth/forgot-password/forgot-password-flow';
+import AuthLayout from '@/app/auth/layout';
+import Register from '@/app/auth/register/register';
+import AiChat from '@/app/AI-chat/chat-ui';
 
-const supportedLocales = ['en', 'ar'] as const
+const supportedLocales = ['en', 'ar'] as const;
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'Ai-chat', element: <AiChat /> },
 
       // Auth Routes
       {
@@ -50,4 +52,4 @@ export const router = createBrowserRouter([
     path: '*',
     element: <Navigate to="/en" replace />,
   },
-])
+]);

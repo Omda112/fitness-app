@@ -1,4 +1,4 @@
-import { resetPasswordAction } from '@/lib/actions/forgot-password/reset-password.action';
+import { resetPasswordAction } from '@/lib/apis/forgot-password/reset-password.action';
 import { ResetPasswordPayload } from '@/lib/types/forgot-password';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';

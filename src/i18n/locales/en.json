@@ -150,5 +150,87 @@
         "maintainWeight": "Maintain weight"
       }
     }
+  },
+  "aiChat": {
+    "sidebar": {
+      "title": "Chat History",
+      "newThread": "New Thread",
+      "storageNotice": "Your conversations are stored locally"
+    },
+    "header": {
+      "activeModel": "Active Model",
+      "switchModel": "Switch Model",
+      "models": {
+        "gemini": "Gemini 2.0 Flash",
+        "llama": "Llama 3.3",
+        "deepseek": "DeepSeek V3.1",
+        "gemma": "Google: Gemma 3n 4B"
+      }
+    },
+    "thread": {
+      "newChat": "New Chat",
+      "welcome": {
+        "title": "Hello there!",
+        "subtitle": "How can I help you today?"
+      },
+      "suggestions": {
+        "workout": {
+          "title": "Suggest a workout",
+          "label": "for beginners at home",
+          "prompt": "Suggest a full-body home workout routine for beginners."
+        },
+        "nutrition": {
+          "title": "Nutrition advice",
+          "label": "for muscle gain",
+          "prompt": "What should I eat to gain muscle mass effectively?"
+        }
+      },
+      "composer": {
+        "placeholder": "Message Assistant...",
+        "send": "Send message",
+        "cancel": "Stop generating"
+      },
+      "actions": {
+        "copy": "Copy",
+        "export": "Export as Markdown",
+        "refresh": "Refresh",
+        "edit": "Edit",
+        "scrollToBottom": "Scroll to bottom",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "edit": {
+        "cancel": "Cancel",
+        "update": "Update"
+      },
+      "attachments": {
+        "imagePreview": "Image Preview",
+        "imageAttachmentPreview": "Image Attachment Preview",
+        "attachmentPreview": "Attachment preview",
+        "removeFile": "Remove file",
+        "addAttachment": "Add Attachment",
+        "types": {
+          "image": "Image",
+          "document": "Document",
+          "file": "File"
+        },
+        "attachmentLabel": "{{typeLabel}} attachment"
+      },
+      "tools": {
+        "cancelled": "Cancelled tool: ",
+        "used": "Used tool: ",
+        "cancelledReason": "Cancelled reason:",
+        "result": "Result:"
+      },
+      "threadList": {
+        "newThread": "New Thread",
+        "loading": "Loading threads",
+        "fallbackTitle": "New Chat",
+        "archive": "Archive thread"
+      },
+      "markdown": {
+        "copy": "Copy"
+      }
+    }
   }
 }

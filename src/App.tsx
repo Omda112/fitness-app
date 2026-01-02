@@ -46,6 +46,7 @@ export default function App() {
       storageKey="app-theme"
     >
       <QueryClientProvider client={queryClient}>
+
         <Toaster />
 
         {/* React Query Developer Tools */}

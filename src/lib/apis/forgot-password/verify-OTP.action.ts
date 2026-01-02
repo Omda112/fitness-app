@@ -6,6 +6,7 @@ export const verifyOTPAction = async (OTP: OTPvalue) => {
   try {
     // Send Post Request to "verifyResetCode Endpoint"
     const response = await api.post<VerifyCodeResponse>('/auth/verifyResetCode', OTP);
+
     // Return the server response
     return response.data;
   } catch (error: any) {
@@ -14,6 +15,7 @@ export const verifyOTPAction = async (OTP: OTPvalue) => {
       const message = error.response?.data?.error || 'Failed to verify OTP';
       throw new Error(message);
     }
+
     // Catch any unexpected errors and return a descriptive message
     throw new Error(error?.message || 'Unexpected error while verifing OTP');
   }
