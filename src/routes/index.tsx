@@ -6,6 +6,7 @@ import ForgotPassword from '@/app/auth/forgot-password/forgot-password-flow';
 import AuthLayout from '@/app/auth/layout';
 import Register from '@/app/auth/register/register';
 import AiChat from '@/app/AI-chat/chat-ui';
+import Aboutus from '@/app/about/About';
 
 const supportedLocales = ['en', 'ar'] as const;
 
@@ -34,6 +35,7 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'about', element:  <Aboutus /> },
       { path: 'Ai-chat', element: <AiChat /> },
 
       // Auth Routes
