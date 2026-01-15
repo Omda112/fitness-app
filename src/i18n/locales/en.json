@@ -38,5 +38,13 @@
     "gym_location_1": "2715 Ash Dr. San Jose, South",
     "gym_location_2": "Dakota 83475",
     "phone_number": "+91 123 456 789"
+  },
+  "navbar":{
+    "home":"Home",
+    "about":"About",
+    "classes":"Classes",
+    "healthy":"Healthy",
+    "login":"Login",
+    "signup":"Signup"
   }
 }

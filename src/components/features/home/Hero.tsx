@@ -7,7 +7,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex flex-col lg:flex-row gap-8 md:gap-16 lg:gap-29.25 px-6 md:px-12 lg:px-20 pt-12 md:pt-18 lg:pt-25 rounded-lg overflow-hidden
+    <section className="relative flex flex-col lg:flex-row gap-8 md:gap-16 lg:gap-29.25 px-6 md:px-12 lg:px-20 pt-12 md:pt-18 lg:pt-25 overflow-hidden
                         bg-[url('/src/assets/images/home-cover.png')] bg-cover bg-center">
 
       {/* Overlay */}

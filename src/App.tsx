@@ -3,6 +3,7 @@ import { Outlet, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import Footer from './components/layout/footer/Footer'
+import Navbar from './components/layout/navbar/Navbar'
 
 const SUPPORTED_LOCALES = ['en', 'ar'] as const
 type Locale = (typeof SUPPORTED_LOCALES)[number]
@@ -28,6 +29,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Navbar/>
       <Outlet />
       <Footer />
     </div>
