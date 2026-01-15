@@ -272,4 +272,21 @@
     "healthy": "صحي",
     "login": "تسجيل الدخول",
     "signup": "إنشاء حساب"
-}}
+  },
+  "settings": {
+    "changePassword": "تغيير كلمة المرور",
+    "selectLanguage": "اختر اللغة",
+    "mood": {
+      "label": "الوضع",
+      "dark": "داكن",
+      "light": "فاتح"
+    },
+    "security": "الأمان",
+    "privacyPolicy": "سياسة الخصوصية",
+    "help": "المساعدة",
+    "logout": {
+      "label": "تسجيل الخروج",
+      "logging": "جاري تسجيل الخروج..."
+    }
+  }
+}

@@ -272,5 +272,21 @@
     "healthy": "Healthy",
     "login": "Login",
     "signup": "Signup"
+  },
+  "settings": {
+    "changePassword": "Change Password",
+    "selectLanguage": "Select Language",
+    "mood": {
+      "label": "Mood",
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "security": "Security",
+    "privacyPolicy": "Privacy Policy",
+    "help": "Help",
+    "logout": {
+      "label": "Logout",
+      "logging": "Logging out..."
+    }
   }
 }

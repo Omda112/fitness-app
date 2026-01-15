@@ -8,6 +8,9 @@ import Register from '@/app/auth/register/register';
 import AiChat from '@/app/AI-chat/chat-ui';
 import Aboutus from '@/app/about/About';
 
+import AccountSettingsPage from '@/app/account/account';
+
+
 const supportedLocales = ['en', 'ar'] as const;
 
 export const router = createBrowserRouter([
@@ -37,6 +40,9 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'about', element:  <Aboutus /> },
       { path: 'Ai-chat', element: <AiChat /> },
+
+      // Account Settings (مش جزء من AuthLayout)
+      { path: 'account', element: <AccountSettingsPage /> },
 
       // Auth Routes
       {

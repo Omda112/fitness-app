@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, Loader2, Apple } from 'lucide-react';
 import { useLogin } from '@/hooks/useLogin';
-
-
 import { validateEmail, validatePassword } from '@/lib/schemas/auth.schema';
 import { useAuth } from '@/context/auth-context';
 
