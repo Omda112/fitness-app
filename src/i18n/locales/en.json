@@ -264,5 +264,13 @@
         "copy": "Copy"
       }
     }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "classes": "Classes",
+    "healthy": "Healthy",
+    "login": "Login",
+    "signup": "Signup"
   }
 }

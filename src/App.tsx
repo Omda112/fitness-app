@@ -9,6 +9,7 @@ import { Outlet, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import Footer from './components/layout/footer/Footer'
+import Navbar from './components/layout/navbar/Navbar'
 
 // Variables
 const SUPPORTED_LOCALES = ['en', 'ar'] as const;
@@ -58,12 +59,11 @@ export default function App() {
 
         {/* Application Content */}
         <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+          <Navbar />
           <Outlet />
-          <Footer/>
+          <Footer />
         </div>
       </QueryClientProvider>
     </ThemeProvider>
   );
-    
-  
 }
